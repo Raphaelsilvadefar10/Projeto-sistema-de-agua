@@ -10,33 +10,128 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BombaRouteImport } from './routes/bomba'
+import { Route as ConfiguracoesRouteImport } from './routes/configuracoes'
+import { Route as EnergiaRouteImport } from './routes/energia'
+import { Route as HistoricoRouteImport } from './routes/historico'
+import { Route as ReservatoriosRouteImport } from './routes/reservatorios'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as SustentabilidadeRouteImport } from './routes/sustentabilidade'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BombaRoute = BombaRouteImport.update({
+  id: '/bomba',
+  path: '/bomba',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfiguracoesRoute = ConfiguracoesRouteImport.update({
+  id: '/configuracoes',
+  path: '/configuracoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnergiaRoute = EnergiaRouteImport.update({
+  id: '/energia',
+  path: '/energia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HistoricoRoute = HistoricoRouteImport.update({
+  id: '/historico',
+  path: '/historico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReservatoriosRoute = ReservatoriosRouteImport.update({
+  id: '/reservatorios',
+  path: '/reservatorios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SustentabilidadeRoute = SustentabilidadeRouteImport.update({
+  id: '/sustentabilidade',
+  path: '/sustentabilidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bomba': typeof BombaRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/energia': typeof EnergiaRoute
+  '/historico': typeof HistoricoRoute
+  '/reservatorios': typeof ReservatoriosRoute
+  '/sobre': typeof SobreRoute
+  '/sustentabilidade': typeof SustentabilidadeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bomba': typeof BombaRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/energia': typeof EnergiaRoute
+  '/historico': typeof HistoricoRoute
+  '/reservatorios': typeof ReservatoriosRoute
+  '/sobre': typeof SobreRoute
+  '/sustentabilidade': typeof SustentabilidadeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bomba': typeof BombaRoute
+  '/configuracoes': typeof ConfiguracoesRoute
+  '/energia': typeof EnergiaRoute
+  '/historico': typeof HistoricoRoute
+  '/reservatorios': typeof ReservatoriosRoute
+  '/sobre': typeof SobreRoute
+  '/sustentabilidade': typeof SustentabilidadeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/bomba'
+    | '/configuracoes'
+    | '/energia'
+    | '/historico'
+    | '/reservatorios'
+    | '/sobre'
+    | '/sustentabilidade'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/bomba'
+    | '/configuracoes'
+    | '/energia'
+    | '/historico'
+    | '/reservatorios'
+    | '/sobre'
+    | '/sustentabilidade'
+  id:
+    | '__root__'
+    | '/'
+    | '/bomba'
+    | '/configuracoes'
+    | '/energia'
+    | '/historico'
+    | '/reservatorios'
+    | '/sobre'
+    | '/sustentabilidade'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BombaRoute: typeof BombaRoute
+  ConfiguracoesRoute: typeof ConfiguracoesRoute
+  EnergiaRoute: typeof EnergiaRoute
+  HistoricoRoute: typeof HistoricoRoute
+  ReservatoriosRoute: typeof ReservatoriosRoute
+  SobreRoute: typeof SobreRoute
+  SustentabilidadeRoute: typeof SustentabilidadeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +143,67 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bomba': {
+      id: '/bomba'
+      path: '/bomba'
+      fullPath: '/bomba'
+      preLoaderRoute: typeof BombaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/configuracoes': {
+      id: '/configuracoes'
+      path: '/configuracoes'
+      fullPath: '/configuracoes'
+      preLoaderRoute: typeof ConfiguracoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/energia': {
+      id: '/energia'
+      path: '/energia'
+      fullPath: '/energia'
+      preLoaderRoute: typeof EnergiaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/historico': {
+      id: '/historico'
+      path: '/historico'
+      fullPath: '/historico'
+      preLoaderRoute: typeof HistoricoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reservatorios': {
+      id: '/reservatorios'
+      path: '/reservatorios'
+      fullPath: '/reservatorios'
+      preLoaderRoute: typeof ReservatoriosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sustentabilidade': {
+      id: '/sustentabilidade'
+      path: '/sustentabilidade'
+      fullPath: '/sustentabilidade'
+      preLoaderRoute: typeof SustentabilidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BombaRoute: BombaRoute,
+  ConfiguracoesRoute: ConfiguracoesRoute,
+  EnergiaRoute: EnergiaRoute,
+  HistoricoRoute: HistoricoRoute,
+  ReservatoriosRoute: ReservatoriosRoute,
+  SobreRoute: SobreRoute,
+  SustentabilidadeRoute: SustentabilidadeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

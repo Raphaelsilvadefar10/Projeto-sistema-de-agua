@@ -1,0 +1,45 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { BatteryCharging, Cpu, CloudRain, Droplets, Gauge, Sun, Waves, Wrench } from "lucide-react";
+import { PageHeader, Panel } from "@/components/AppShell";
+import { pageHead } from "@/lib/head";
+
+export const Route = createFileRoute("/sobre")({
+  head: pageHead("Sobre o projeto", "Objetivo, funcionamento, componentes e benefícios do sistema de aproveitamento de água da chuva."),
+  component: Page,
+});
+
+const steps = [
+  { i: CloudRain, t: "Captação", d: "A água da chuva é direcionada das calhas ao primeiro reservatório." },
+  { i: Gauge, t: "Monitoramento", d: "O sensor de nível mede continuamente o reservatório 1." },
+  { i: Cpu, t: "Processamento", d: "O Arduino compara a leitura com o limite programado." },
+  { i: Droplets, t: "Transferência", d: "A bomba é acionada e envia a água para a caixa-d'água." },
+];
+const parts = [
+  { i: Cpu, t: "Arduino", d: "Controla o sensor e a bomba." }, { i: Gauge, t: "Sensor de nível", d: "Lê o nível do reservatório 1." },
+  { i: Droplets, t: "Bomba d'água", d: "Transfere a água entre reservatórios." }, { i: Sun, t: "Painel solar", d: "Gera energia limpa." },
+  { i: BatteryCharging, t: "Baterias", d: "Armazenam a energia para o sistema." }, { i: Waves, t: "Reservatórios", d: "Captação e caixa-d'água." },
+];
+
+function Page() {
+  return (
+    <>
+      <PageHeader title="Sobre o projeto" subtitle="Um sistema automatizado e autossuficiente em energia para captar, armazenar e reaproveitar a água da chuva." />
+      <Panel><h2 className="font-display text-lg font-semibold">Objetivo</h2>
+        <p className="mt-2 text-muted-foreground">Reduzir o consumo de água potável em usos não nobres, automatizando a transferência da água captada com controle por Arduino e alimentação solar.</p></Panel>
+      <h2 className="mt-8 font-display text-lg font-semibold">Funcionamento</h2>
+      <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {steps.map((s, n) => (<Panel key={s.t}><div className="flex items-center gap-2 text-primary"><s.i className="h-5 w-5" /><span className="text-xs font-bold">0{n + 1}</span></div><h3 className="mt-2 font-semibold">{s.t}</h3><p className="mt-1 text-sm text-muted-foreground">{s.d}</p></Panel>))}
+      </div>
+      <h2 className="mt-8 font-display text-lg font-semibold">Componentes</h2>
+      <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {parts.map((s) => (<Panel key={s.t} className="flex gap-3"><span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-secondary text-secondary-foreground"><s.i className="h-5 w-5" /></span><div><h3 className="font-semibold">{s.t}</h3><p className="text-sm text-muted-foreground">{s.d}</p></div></Panel>))}
+      </div>
+      <h2 className="mt-8 font-display text-lg font-semibold">Benefícios</h2>
+      <Panel className="mt-3"><ul className="grid gap-2 text-sm sm:grid-cols-2">
+        {["Economia de água potável", "Energia limpa e independente da rede", "Operação automática e confiável", "Fácil inspeção e manutenção dos componentes", "Instalação elétrica segura em baixa tensão", "Incentivo ao uso consciente dos recursos"].map((b) => (
+          <li key={b} className="flex gap-2"><Wrench className="h-4 w-4 text-success" />{b}</li>))}
+      </ul></Panel>
+      <p className="mt-6 text-xs text-muted-foreground">Este site apresenta dados simulados. Não há conexão real com Arduino ou sensores; a estrutura está preparada para integração futura.</p>
+    </>
+  );
+}
