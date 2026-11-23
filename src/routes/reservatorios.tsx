@@ -24,10 +24,6 @@ function Page() {
         </div>
         <Tank label="Reservatório 2 — Caixa-d'água" level={state.r2} sub={l(state.r2)} />
       </Panel>
-      <div className="mt-4 grid gap-4 sm:grid-cols-2">
-        <Panel><h3 className="font-display font-semibold">Reservatório 1</h3><p className="mt-1 text-sm text-muted-foreground">Recebe a água das calhas. Possui o sensor de nível ligado ao Arduino (simulado).</p></Panel>
-        <Panel><h3 className="font-display font-semibold">Reservatório 2</h3><p className="mt-1 text-sm text-muted-foreground">Caixa-d'água abastecida pela bomba, para uso não potável.</p></Panel>
-      </div>
     </>
   );
 }
