@@ -5,9 +5,9 @@ import { BatteryCharging, Cog, Droplets, Gauge, History, Info, Leaf, Menu, Sun, 
 const nav = [
   { to: "/", label: "Dashboard", icon: Gauge },
   { to: "/reservatorios", label: "Reservatórios", icon: Waves },
-  { to: "/bomba", label: "Controle da bomba", icon: Droplets },
+  
   { to: "/energia", label: "Energia solar", icon: Sun },
-  { to: "/historico", label: "Histórico", icon: History },
+ 
   { to: "/sobre", label: "Sobre o projeto", icon: Info },
   { to: "/sustentabilidade", label: "Sustentabilidade", icon: Leaf },
   { to: "/configuracoes", label: "Configurações", icon: Cog },
