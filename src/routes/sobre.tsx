@@ -15,9 +15,13 @@ const steps = [
   { i: Droplets, t: "Transferência", d: "A bomba é acionada e envia a água para a caixa-d'água." },
 ];
 const parts = [
-  { i: Cpu, t: "Arduino", d: "Controla o sensor e a bomba." }, { i: Gauge, t: "Sensor de nível", d: "Lê o nível do reservatório 1." },
-  { i: Droplets, t: "Bomba d'água", d: "Transfere a água entre reservatórios." }, { i: Sun, t: "Painel solar", d: "Gera energia limpa." },
-  { i: BatteryCharging, t: "Baterias", d: "Armazenam a energia para o sistema." }, { i: Waves, t: "Reservatórios", d: "Captação e caixa-d'água." },
+  { i: Cpu, t: "Arduino", d: "" },
+  { i: Gauge, t: "Sensor de presença", d: "" },
+  { i: Droplets, t: "Bomba d'água", d: "" },
+  { i: Sun, t: "Painel solar", d: "" },
+  { i: BatteryCharging, t: "Baterias", d: "" },
+  { i: Waves, t: "Reservatórios", d: "" },
+  { i: Cpu, t: "Relé", d: "" },
 ];
 
 function Page() {
