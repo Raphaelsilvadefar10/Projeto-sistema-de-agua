@@ -23,9 +23,8 @@ const parts = [
 function Page() {
   return (
     <>
-      <PageHeader title="Sobre o projeto" subtitle="Um sistema automatizado e autossuficiente em energia para captar, armazenar e reaproveitar a água da chuva." />
-      <Panel><h2 className="font-display text-lg font-semibold">Objetivo</h2>
-        <p className="mt-2 text-muted-foreground">Reduzir o consumo de água potável em usos não nobres, automatizando a transferência da água captada com controle por Arduino e alimentação solar.</p></Panel>
+
+  
       <h2 className="mt-8 font-display text-lg font-semibold">Funcionamento</h2>
       <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {steps.map((s, n) => (<Panel key={s.t}><div className="flex items-center gap-2 text-primary"><s.i className="h-5 w-5" /><span className="text-xs font-bold">0{n + 1}</span></div><h3 className="mt-2 font-semibold">{s.t}</h3><p className="mt-1 text-sm text-muted-foreground">{s.d}</p></Panel>))}
