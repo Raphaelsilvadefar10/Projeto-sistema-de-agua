@@ -27,10 +27,10 @@ const parts = [
 function Page() {
   return (
     <>
-   <PageHeader title="Sobre o projeto" subtitle="Um sistema automatizado e autossuficiente em energia para captar, armazenar e reaproveitar a água da chuva." />
+   <PageHeader title="Sobre o projeto" subtitle="Nosso projeto consiste no desenvolvimento de um sistema automatizado de captação e aproveitamento da água da chuva. Ele utiliza Arduino, sensor de presença, bomba d’água e energia solar para controlar a transferência da água entre dois reservatórios." />
 <Panel>
   <h2 className="font-display text-lg font-semibold">Objetivo</h2>
-  <p className="mt-2 text-muted-foreground">Reduzir o consumo de água potável em usos não nobres, automatizando a transferência da água captada com controle por Arduino e alimentação solar.</p>
+  <p className="mt-2 text-muted-foreground">O principal objetivo é reaproveitar a água da chuva, contribuindo para a sustentabilidade, principalmente diante dos problemas de falta de água que motivaram o desenvolvimento do projeto.</p>
 </Panel>
       <h2 className="mt-8 font-display text-lg font-semibold">Componentes</h2>
       <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
