@@ -22,6 +22,7 @@ const parts = [
   { i: BatteryCharging, t: "Baterias", d: "" },
   { i: Waves, t: "Reservatórios", d: "" },
   { i: Cpu, t: "Relé", d: "" },
+  { i: Cpu, t: "Fios", d: ""},
 ];
 function Page() {
   return (
